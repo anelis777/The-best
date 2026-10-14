@@ -1,170 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Prime</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetNova</title>
+    <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
 
-    <body>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <img src="logo.jpg" alt="PetNova logo" class="logo">
+        
 
-        <header>
-            <div class="logo">
-                PRIME
-            </div>
+        <nav>
+            <ul>
+                <li><a href="#Home"> <img src="Icon home.png File" alt="" class="icon"> Home</a></li>
+                <li><a href="#About-Us"> <img src="About us icon.png File" alt="" class="icon"> About Us</a></li>
+                <li><a href="#Functions"> <img src="icons/functions.png" alt="" class="icon"> Functions</a></li>
+                <li><a href="#Contact"> <img src="icons/contact.png" alt="" class="icon"> Contact</a></li>
+                <li><a href="#Privacy-Policy"> <img src="icons/privacy.png" alt="" class="icon"> Privacy Policy</a></li>
+            </ul>
+        </nav>
 
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#proyecto">Proyecto</a>
-                <a href="#comunidad">Comunidad</a>
-                <a href="#blog">Blog</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+        <a href="#Login" class="login-btn">
+            <span class="login-icon">&#128100;</span> LOG IN
+        </a>
+    </header>
 
-            <button class="btn-login">Sign In</button>
-        </header>
-
-        <section class="hero">
-
-            <span class="subtitle">SPORTS PLATFORM</span>
-
-            <h1>
-                CONECTA,<br>
-                ENTRENA<br>
-                Y JUEGA<br>
-                CON <span>PRIME.</span>
-            </h1>
-
-            <p>
-                Encuentra canchas, entrenadores certificados
-                y organiza partidos dentro de una comunidad
-                deportiva en un solo lugar.
-            </p>
-<!-- ESTADÍSTICAS -->
-        <section class="stats">
-            <div class="stat">
-                <h2>+30</h2>
-                <p>Courts Available</p>
-            </div>
-
-            <div class="stat">
-                <h2>+50</h2>
-                <p>Certified Coaches</p>
-            </div>
-
-            <div class="stat">
-                <h2>+500</h2>
-                <p>Active Users</p>
-            </div>
+    <main>
+        <section id="Home" class="principal">
+            <h2>Welcome to PetNova!</h2>
+            <p>This application was created using HTML and CSS.</p>
+            <a href="#About-Us" class="btn">Learn More!</a>
         </section>
 
-        <!-- PERFIL -->
-        <section class="profile-section">
-
-            <div class="profile-title">
-                <span></span>
-                <p>YOUR PROFILE</p>
-            </div>
-
-            <h2 class="profile-heading">
-                YOUR PROGRESS, ALWAYS IN VIEW.
-            </h2>
-
-            <p class="profile-description">
-                A personal dashboard with your favorite sports, stats, and upcoming
-                matches, ready as soon as you log in.
-            </p>
-
-            <div class="profile-content">
-
-                <!-- TARJETA DE PERFIL -->
-                <div class="profile-card">
-
-                    <div class="profile-info">
-                        <div class="profile-avatar">
-                            JR
-                        </div>
-
-                        <div>
-                            <h3>Julia Reyes</h3>
-                            <p>Panama City · Intermediate level</p>
-                        </div>
-                    </div>
-
-                    <div class="sports">
-                        <span>Soccer 5-a-side</span>
-                        <span>Padel</span>
-                        <span>Running</span>
-                    </div>
-
-                    <div class="profile-stats">
-
-                        <div class="profile-stat">
-                            <h4>42</h4>
-                            <p>MATCHES</p>
-                        </div>
-
-                        <div class="profile-stat">
-                            <h4>19</h4>
-                            <p>WORKOUTS</p>
-                        </div>
-
-                        <div class="profile-stat">
-                            <h4>7</h4>
-                            <p>ACHIEVEMENTS</p>
-                        </div>
-
-                    </div>
-
+        <section id="About-Us" class="tarjetas">
+            <h2>What We Offer</h2>
+            <div class="tarjetas-container">
+                <div class="tarjeta">
+                    <h3>Innovation</h3>
+                    <p>We offer fast, accessible technological solutions for your pet, all in one place.</p>
                 </div>
-
-                <!-- PRÓXIMOS PARTIDOS -->
-                <div class="matches-card">
-
-                    <div class="matches-title">
-                        <span></span>
-                        <p>UPCOMING MATCHES</p>
-                    </div>
-
-                    <div class="match">
-
-                        <div class="match-date">
-                            <strong>18</strong>
-                            <span>JUL</span>
-                        </div>
-
-                        <div class="match-info">
-                            <h3>Soccer 5 – Los Halcones</h3>
-                            <p>
-                                Estadio Agustín "Muquita" Sánchez · 7:00 PM
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="match">
-
-                        <div class="match-date">
-                            <strong>21</strong>
-                            <span>JUL</span>
-                        </div>
-
-                        <div class="match-info">
-                            <h3>Coaching session – Padel</h3>
-                            <p>
-                                Complejo Deportivo de La Feria de La Chorrera · 6:30 AM
-                            </p>
-                        </div>
-
-                    </div>
-
+                <div class="tarjeta">
+                    <h3>Creativity</h3>
+                    <p>We want the best for pets, so we look for comfort and the right tools to make this mission possible.</p>
                 </div>
-
+                <div class="tarjeta">
+                    <h3>Technology</h3>
+                    <p>We use digital tools to make your pet's life — and yours — easier.</p>
+                </div>
             </div>
-
         </section>
-        </section>
+    </main>
 
-    </body>
+    <footer id="Contact">
+        <p>&copy; 2026 PetNova</p>
+    </footer>
+
+</body>
 </html>

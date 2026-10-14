@@ -398,12 +398,3 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 }
-Así cada nivel queda correctamente separado por tabulación, por ejemplo:
-
-<section>
-    <div>
-        <h2>
-            Texto
-        </h2>
-    </div>
-</section>

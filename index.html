@@ -115,26 +115,6 @@
    </section>
 <!-- ===== FIN DEL CARRUSEL ===== -->
 
-    <!-- Sección principal -->
-    <main class="hero">
-        <section class="hero-content">
-            <p class="eyebrow">SPORTS PLATFORM</p>
-
-            <h1>
-                CONNECT, TRAIN<br>
-                AND PLAY,<br>
-                WITH <span>PRIME.</span>
-            </h1>
-
-            <p class="description">
-                Find courts, meet certified coaches, and organize<br class="desktop-break">
-                matches with a sports community all in one place.
-            </p>
-
-            <div class="hero-divider"></div>
-        </section>
-    </main>
-
     <script>
         const menuToggle = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
@@ -255,34 +235,129 @@
 
 </section>
 
+<!-- ===== SPORTS COURTS ===== -->
+<section class="courts-section" id="courts">
+<div class="courts-heading">
+    <div class="courts-title-content">
+        <p class="section-label">
+            <span></span>
+            SPORTS COURTS
+        </p>
 
-<!-- ===== SECCIÓN DE RESERVA DE CANCHAS ===== -->
-<section class="courts-section">
+        <h2>
+            BOOK YOUR COURT IN<br>
+            UNDER A MINUTE.
+        </h2>
+    </div>
+</div>
+    <div class="courts-top">
+        <button class="sports-filter" id="allSports">
+            All Sports
+        </button>
+    </div>
 
-    <div class="courts-heading">
+    <div class="courts-grid">
 
-        <div class="courts-title-content">
-             <p class="section-label">
-                <span></span>
-                SPORTS COURTS
-            </p>
+        <!-- CANCHA 1 -->
+        <article class="court-card">
+            <div class="court-image">
+                <img src="imagenes/imagen4.jpg" alt="La Chorrera Municipal Pool">
+                <span class="court-rating">★ 4.6</span>
+            </div>
 
-            <h2>
-                BOOK YOUR COURT IN<br>
-                UNDER A MINUTE.
-            </h2>
-        </div>
+            <div class="court-info">
+                <h3>La Chorrera Municipal Pool</h3>
+                <p class="court-location">La Chorrera, Panama West</p>
 
-        <a href="#interactive-map" class="map-button">
-            View Interactive Map
-        </a>
+                <div class="court-price">
+                    <strong>$25</strong>
+                    <span>/ hour</span>
+                </div>
+
+                <button class="book-button" data-court="La Chorrera Municipal Pool">
+                    Book Court
+                </button>
+            </div>
+        </article>
+
+        <!-- CANCHA 2 -->
+        <article class="court-card">
+            <div class="court-image">
+                <img src="imagenes/imagen5.webp" alt="La Chorrera Volley Court">
+                <span class="court-rating">★ 4.7</span>
+            </div>
+
+            <div class="court-info">
+                <h3>La Chorrera Volley Court</h3>
+                <p class="court-location">La Chorrera, Panama West</p>
+
+                <div class="court-price">
+                    <strong>$40</strong>
+                    <span>/ hour</span>
+                </div>
+
+                <button class="book-button" data-court="La Chorrera Volley Court">
+                    Book Court
+                </button>
+            </div>
+        </article>
+
+        <!-- CANCHA 3 -->
+        <article class="court-card">
+            <div class="court-image">
+                <img src="imagenes/imagen6.avif" alt="La Chorrera Turf Pitch">
+                <span class="court-rating">★ 4.8</span>
+            </div>
+
+            <div class="court-info">
+                <h3>La Chorrera Turf Pitch</h3>
+                <p class="court-location">La Chorrera, Panama West</p>
+
+                <div class="court-price">
+                    <strong>$28</strong>
+                    <span>/ hour</span>
+                </div>
+
+                <button class="book-button" data-court="La Chorrera Turf Pitch">
+                    Book Court
+                </button>
+            </div>
+        </article>
 
     </div>
 
-    <!-- Aquí puedes agregar posteriormente el mapa de canchas -->
-    <div id="interactive-map"></div>
-a
+    <p class="booking-message" id="bookingMessage" aria-live="polite"></p>
+
+    <!-- Destino del botón del mapa -->
+    <div id="interactive-map" class="map-placeholder">
+        <h2>Interactive Map</h2>
+        <p>Your sports courts map will appear here.</p>
+    </div>
+
 </section>
+
+<!-- BOTÓN FLOTANTE DEL MAPA -->
+<a href="#interactive-map" class="floating-map-button">
+    View Interactive Map
+</a>
+
+<!-- FUNCIONAMIENTO DE LOS BOTONES DE RESERVA -->
+<script>
+    const bookButtons = document.querySelectorAll(".book-button");
+    const bookingMessage = document.getElementById("bookingMessage");
+
+    bookButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const court = button.dataset.court;
+
+            bookingMessage.textContent =
+                "You selected: " + court + ". Booking feature coming soon!";
+        });
+    });
+</script>
+
+<!-- BOOTSTRAP -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

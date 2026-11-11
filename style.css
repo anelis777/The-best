@@ -1,4 +1,7 @@
-/* ===== CONFIGURACIÓN GENERAL ===== */
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +27,10 @@ body {
     min-height: 100vh;
 }
 
-/* ===== BARRA DE NAVEGACIÓN ===== */
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
 .navbar {
     height: 78px;
     width: 100%;
@@ -38,6 +44,7 @@ body {
 }
 
 /* Logo */
+
 .logo {
     display: flex;
     align-items: center;
@@ -51,6 +58,7 @@ body {
     width: 42px;
     height: 48px;
 }
+
 .logo span {
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
@@ -59,6 +67,7 @@ body {
 }
 
 /* Enlaces */
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -80,6 +89,7 @@ body {
 }
 
 /* Botón Sign In */
+
 .sign-in {
     width: 213px;
     height: 64px;
@@ -106,225 +116,10 @@ body {
     display: none;
 }
 
-/* ===== SECCIÓN PRINCIPAL ===== */
-.hero {
-    min-height: calc(100vh - 78px);
-    background-color: var(--background);
-    padding: 84px 0 0 4.4%;
-}
+/* =========================================
+   ESTADÍSTICAS
+========================================= */
 
-.hero-content {
-    width: 100%;
-    max-width: 720px;
-}
-
-/* Texto superior naranja */
-.eyebrow {
-    color: var(--orange);
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 6px;
-    margin-bottom: 32px;
-}
-
-/* Título grande */
-h1 {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(64px, 7.1vw, 108px);
-    line-height: 1.01;
-    font-weight: 400;
-    letter-spacing: -1.5px;
-    color: var(--white);
-    text-transform: uppercase;
-}
-
-h1 span {
-    color: var(--orange);
-}
-
-/* Descripción */
-.description {
-    margin-top: 54px;
-    color: var(--gray);
-    font-size: 25px;
-    line-height: 1.65;
-    font-weight: 400;
-}
-
-/* Línea inferior */
-.hero-divider {
-    width: min(720px, 100%);
-    height: 1px;
-    background-color: #303030;
-    margin-top: 60px;
-}
-
-/* ===== TABLET ===== */
-@media (max-width: 1050px) {
-    .navbar {
-        padding: 0 24px;
-    }
-
-    .nav-links {
-        gap: 14px;
-        margin-right: 24px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-    }
-
-    .sign-in {
-        width: 140px;
-        height: 54px;
-        font-size: 18px;
-    }
-
-    .hero {
-        padding-top: 75px;
-    }
-
-    h1 {
-        font-size: clamp(60px, 8vw, 85px);
-    }
-
-    .description {
-        font-size: 20px;
-    }
-}
-
-/* ===== MÓVILES ===== */
-@media (max-width: 700px) {
-    .navbar {
-        height: 72px;
-        padding: 0 20px;
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 42px;
-    }
-
-    .logo span {
-        font-size: 22px;
-    }
-
-    .menu-toggle {
-        display: block;
-        border: none;
-        background: transparent;
-        color: var(--orange);
-        font-size: 30px;
-        cursor: pointer;
-        margin-left: auto;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        padding: 24px;
-        background-color: var(--black);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        border-top: 1px solid #242424;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        font-size: 18px;
-    }
-
-    .sign-in {
-        width: 105px;
-        height: 42px;
-        font-size: 15px;
-        margin-left: 15px;
-    }
-
-    .hero {
-        min-height: calc(100vh - 72px);
-        padding: 70px 22px 40px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .eyebrow {
-        font-size: 14px;
-        letter-spacing: 4px;
-        margin-bottom: 25px;
-    }
-
-    h1 {
-        font-size: clamp(48px, 10.5vw, 72px);
-        line-height: 1.08;
-        letter-spacing: -0.5px;
-    }
-
-    .description {
-        margin-top: 35px;
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .desktop-break {
-        display: none;
-    }
-
-    .hero-divider {
-        margin-top: 45px;
-    }
-}
-
-/* ===== MÓVILES PEQUEÑOS ===== */
-@media (max-width: 380px) {
-    .navbar {
-        padding: 0 12px;
-    }
-
-    .logo {
-        gap: 4px;
-    }
-
-    .logo span {
-        font-size: 19px;
-    }
-
-    .logo-icon {
-        width: 30px;
-    }
-
-    .sign-in {
-        width: 85px;
-        height: 38px;
-        font-size: 13px;
-        margin-left: 8px;
-    }
-
-    .menu-toggle {
-        font-size: 25px;
-    }
-
-    .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    h1 {
-        font-size: 46px;
-    }
-}
-
-/* ===== ESTADÍSTICAS ===== */
 .stats {
     width: 100%;
     min-height: 150px;
@@ -356,7 +151,10 @@ h1 span {
     white-space: nowrap;
 }
 
-/* ===== SECCIÓN YOUR PROFILE ===== */
+/* =========================================
+   SECCIÓN YOUR PROFILE
+========================================= */
+
 .profile-section {
     width: 100%;
     min-height: 380px;
@@ -364,7 +162,6 @@ h1 span {
     padding: 132px 21px 50px;
 }
 
-/* Etiqueta naranja */
 .profile-label {
     display: flex;
     align-items: center;
@@ -383,7 +180,6 @@ h1 span {
     background-color: #ff3d1f;
 }
 
-/* Título principal */
 .profile-title {
     font-family: 'Anton', sans-serif;
     font-size: clamp(42px, 6.1vw, 78px);
@@ -395,61 +191,12 @@ h1 span {
     margin-bottom: 18px;
 }
 
-/* Descripción */
 .profile-description {
     font-family: 'Poppins', sans-serif;
     font-size: 23px;
     line-height: 1.7;
     font-weight: 400;
     color: #a6a6a6;
-}
-
-/* ===== ADAPTACIÓN PARA MÓVILES ===== */
-@media (max-width: 700px) {
-    .stats {
-        min-height: auto;
-        padding: 35px 22px 30px;
-        gap: 25px;
-        flex-wrap: wrap;
-    }
-
-    .stat-item {
-        min-width: 125px;
-    }
-
-    .stat-item h2 {
-        font-size: 38px;
-    }
-
-    .stat-item p {
-        font-size: 13px;
-        white-space: normal;
-    }
-
-    .profile-section {
-        padding: 75px 20px 40px;
-        min-height: auto;
-    }
-
-    .profile-label {
-        font-size: 14px;
-        letter-spacing: 3px;
-        margin-bottom: 28px;
-    }
-
-    .profile-title {
-        font-size: clamp(36px, 8vw, 54px);
-        line-height: 1.15;
-    }
-
-    .profile-description {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .profile-section .desktop-break {
-        display: none;
-    }
 }
 
 /* =========================================
@@ -476,7 +223,7 @@ h1 span {
     color: #ffffff;
 }
 
-/* PERFIL DEL USUARIO */
+/* Perfil del usuario */
 
 .user-info {
     display: flex;
@@ -512,7 +259,7 @@ h1 span {
     line-height: 1.6;
 }
 
-/* ETIQUETAS DE DEPORTES */
+/* Deportes favoritos */
 
 .sport-tags {
     display: flex;
@@ -535,7 +282,7 @@ h1 span {
     white-space: nowrap;
 }
 
-/* ESTADÍSTICAS DEL PERFIL */
+/* Estadísticas del perfil */
 
 .user-stats {
     display: grid;
@@ -568,7 +315,7 @@ h1 span {
     font-weight: 400;
 }
 
-/* PRÓXIMOS PARTIDOS */
+/* Próximos partidos */
 
 .section-label {
     display: flex;
@@ -644,9 +391,8 @@ h1 span {
     overflow-wrap: anywhere;
 }
 
-
 /* =========================================
-   SECCIÓN BLANCA: RESERVAR CANCHAS
+   SECCIÓN RESERVAR CANCHAS
 ========================================= */
 
 .courts-section {
@@ -681,7 +427,7 @@ h1 span {
     color: #111111;
 }
 
-/* BOTÓN DEL MAPA */
+/* Botón del mapa */
 
 .map-button {
     min-width: 195px;
@@ -711,12 +457,63 @@ h1 span {
     scroll-margin-top: 20px;
 }
 
+/* =========================================
+   CARRUSEL PRINCIPAL
+========================================= */
+
+.prime-carousel-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 25px 4.4%;
+    background-color: #101010;
+}
+
+#carouselStackedBottom {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    min-height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #202020;
+}
+
+#carouselStackedBottom .carousel-inner {
+    width: 100%;
+}
+
+#carouselStackedBottom .carousel-item {
+    height: auto;
+}
+
+#carouselStackedBottom .carousel-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+#carouselStackedBottom .carousel-control-prev,
+#carouselStackedBottom .carousel-control-next {
+    width: 8%;
+    z-index: 2;
+}
+
+#carouselStackedBottom .carousel-indicators {
+    z-index: 3;
+    margin-bottom: 15px;
+}
 
 /* =========================================
-   TABLET
+   ADAPTACIÓN PARA TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
+
     .dashboard-section {
         gap: 20px;
         padding: 45px 18px 75px;
@@ -779,12 +576,117 @@ h1 span {
     }
 }
 
-
 /* =========================================
-   MÓVILES
+   ADAPTACIÓN PARA MÓVILES
 ========================================= */
 
 @media (max-width: 700px) {
+
+    .navbar {
+        height: 72px;
+        padding: 0 20px;
+    }
+
+    .logo-icon {
+        width: 35px;
+        height: 42px;
+    }
+
+    .logo span {
+        font-size: 22px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        color: var(--orange);
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 24px;
+        background-color: var(--black);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        border-top: 1px solid #242424;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .sign-in {
+        width: 105px;
+        height: 42px;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+
+    /* Estadísticas */
+
+    .stats {
+        min-height: auto;
+        padding: 35px 22px 30px;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        min-width: 125px;
+    }
+
+    .stat-item h2 {
+        font-size: 38px;
+    }
+
+    .stat-item p {
+        font-size: 13px;
+        white-space: normal;
+    }
+
+    /* Perfil */
+
+    .profile-section {
+        padding: 75px 20px 40px;
+        min-height: auto;
+    }
+
+    .profile-label {
+        font-size: 14px;
+        letter-spacing: 3px;
+        margin-bottom: 28px;
+    }
+
+    .profile-title {
+        font-size: clamp(36px, 8vw, 54px);
+        line-height: 1.15;
+    }
+
+    .profile-description {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .profile-section .desktop-break {
+        display: none;
+    }
+
+    /* Dashboard */
+
     .dashboard-section {
         grid-template-columns: 1fr;
         padding: 35px 16px 55px;
@@ -873,6 +775,8 @@ h1 span {
         line-height: 1.7;
     }
 
+    /* Canchas */
+
     .courts-section {
         padding: 42px 18px 50px;
     }
@@ -891,61 +795,253 @@ h1 span {
     .map-button {
         min-width: 190px;
     }
-}
 
-/* ===== CARRUSEL PRIME ===== */
+    /* Carrusel */
 
-.prime-carousel-section {
-    display: block;
-    position: relative;
-    width: 100%;
-    padding: 25px 4.4%;
-    background-color: #101010;
-}
-
-#carouselStackedBottom {
-    display: block;
-    position: relative;
-    width: 100%;
-    max-width: 1400px;
-    min-height: 200px;
-    overflow: hidden;
-    border-radius: 18px;
-    background-color: #202020;
-}
-
-#carouselStackedBottom .carousel-inner {
-    width: 100%;
-}
-#carouselStackedBottom .carousel-item {
-    height: auto;
-}
-
-#carouselStackedBottom .carousel-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-}
-
-#carouselStackedBottom .carousel-control-prev,
-#carouselStackedBottom .carousel-control-next {
-    width: 8%;
-    z-index: 2;
-}
-
-#carouselStackedBottom .carousel-indicators {
-    z-index: 3;
-    margin-bottom: 15px;
-}
-
-@media (max-width: 700px) {
     .prime-carousel-section {
         padding: 15px 4%;
     }
+}
 
-    #carouselStackedBottom .carousel-item {
-        height: auto;
+/* =========================================
+   MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo {
+        gap: 4px;
+    }
+
+    .logo span {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 30px;
+    }
+
+    .sign-in {
+        width: 85px;
+        height: 38px;
+        font-size: 13px;
+        margin-left: 8px;
+    }
+
+    .menu-toggle {
+        font-size: 25px;
+    }
+}
+
+/* ===== SPORTS COURTS - TARJETAS ===== */
+
+.courts-section {
+    width: 100%;
+    padding: 35px 4.4% 70px;
+    background: #ffffff;
+    color: #111111;
+}
+
+.courts-top {
+    margin-bottom: 25px;
+}
+
+.sports-filter {
+    padding: 10px 22px;
+    border: 1px solid #e1e4e8;
+    border-radius: 30px;
+    background: #f1f3f5;
+    color: #111111;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.courts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.court-card {
+    overflow: hidden;
+    border: 1px solid #e0e3e8;
+    border-radius: 17px;
+    background: #f8f9fa;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.court-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.court-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.court-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.court-card:hover .court-image img {
+    transform: scale(1.05);
+}
+
+.court-rating {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 7px 11px;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.court-info {
+    padding: 16px 20px 19px;
+}
+
+.court-info h3 {
+    margin: 0 0 3px;
+    color: #111111;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.court-location {
+    margin: 0;
+    color: #697386;
+    font-size: 13px;
+}
+
+.court-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 13px 0 15px;
+}
+
+.court-price strong {
+    color: #080808;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.court-price span {
+    color: #697386;
+    font-size: 13px;
+}
+
+.book-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(90deg, #ff4b12, #ff7900);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(255, 90, 0, 0.18);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.book-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.booking-message {
+    min-height: 24px;
+    margin-top: 18px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ===== BOTÓN FLOTANTE DEL MAPA ===== */
+
+.floating-map-button {
+    position: fixed;
+    right: 24px;
+    bottom: 28px;
+    z-index: 1000;
+    padding: 15px 24px;
+    border-radius: 35px;
+    background: #111426;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.floating-map-button:hover {
+    color: #ffffff;
+    background: #ff5a00;
+    transform: translateY(-4px);
+}
+
+/* ===== ESPACIO DEL MAPA ===== */
+
+.map-placeholder {
+    min-height: 300px;
+    margin-top: 50px;
+    padding: 40px;
+    border-radius: 18px;
+    background: #f1f3f5;
+    color: #111111;
+    text-align: center;
+}
+
+.map-placeholder h2 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.map-placeholder p {
+    color: #697386;
+}
+
+/* ===== TABLET Y MÓVIL ===== */
+
+@media (max-width: 900px) {
+    .courts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .courts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .court-image {
+        height: 220px;
+    }
+
+    .floating-map-button {
+        right: 14px;
+        bottom: 16px;
+        padding: 12px 17px;
+        font-size: 12px;
     }
 }

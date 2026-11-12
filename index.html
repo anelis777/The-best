@@ -40,7 +40,7 @@
             <a href="#">Contact</a>
         </nav>
 
-        <a href="#" class="sign-in">Sign In</a>
+        <a href="#signin" class="sign-in">Sign In</a>
 
         <button class="menu-toggle" aria-label="Abrir menú">
             ☰
@@ -274,7 +274,7 @@
                     <span>/ hour</span>
                 </div>
 
-                <button class="book-button" data-court="La Chorrera Municipal Pool">
+                <button class="book-button" data-court="La Chorrera Municipal Pool" data-sport="Swimming Pool">
                     Book Court
                 </button>
             </div>
@@ -296,7 +296,7 @@
                     <span>/ hour</span>
                 </div>
 
-                <button class="book-button" data-court="La Chorrera Volley Court">
+                <button class="book-button" data-court="La Chorrera Volley Court" data-sport="Volleyball">
                     Book Court
                 </button>
             </div>
@@ -318,7 +318,7 @@
                     <span>/ hour</span>
                 </div>
 
-                <button class="book-button" data-court="La Chorrera Turf Pitch">
+                <button class="book-button" data-court="La Chorrera Turf Pitch" data-sport="Soccer">
                     Book Court
                 </button>
             </div>
@@ -328,34 +328,534 @@
 
     <p class="booking-message" id="bookingMessage" aria-live="polite"></p>
 
-    <!-- Destino del botón del mapa -->
-    <div id="interactive-map" class="map-placeholder">
-        <h2>Interactive Map</h2>
-        <p>Your sports courts map will appear here.</p>
-    </div>
+    <!-- BOTÓN FLOTANTE DEL MAPA -->
+<a href="map.html" class="floating-map-button" id="floatingMapButton">
+    View Interactive Map
+</a>
 
 </section>
+
+<!-- ===== SIGN IN / CREATE ACCOUNT ===== -->
+<section class="auth-section" id="signin">
+
+    <div class="auth-top">
+        <p class="section-label">
+            <span></span>
+            ACCOUNT
+        </p>
+        <a href="#courts" class="back-courts">↑ Back to Courts</a>
+    </div>
+
+    <h2 class="auth-title" id="authTitle">SIGN IN</h2>
+
+    <div class="auth-grid">
+
+        <!-- Formulario -->
+        <div class="auth-left">
+
+            <div class="auth-notice" id="authNotice" role="status" aria-live="polite" hidden>
+                <span class="auth-notice-icon">✓</span>
+                <span id="authNoticeText"></span>
+            </div>
+
+            <form id="authForm" novalidate>
+
+                <div class="auth-field" id="nameField" hidden>
+                    <label for="authName">NAME</label>
+                    <input type="text" id="authName" placeholder="Your full name" autocomplete="name">
+                </div>
+
+                <div class="auth-field">
+                    <label for="authEmail">EMAIL</label>
+                    <input type="email" id="authEmail" placeholder="youremail@example.com" autocomplete="email">
+                </div>
+
+                <div class="auth-field">
+                    <label for="authPassword">PASSWORD</label>
+                    <div class="auth-password">
+                        <input type="password" id="authPassword" placeholder="At least 8 characters" autocomplete="current-password">
+                        <button type="button" class="auth-eye" id="authEye" aria-label="Mostrar contraseña">👁</button>
+                    </div>
+                </div>
+
+                <p class="auth-error" id="authError" role="alert"></p>
+
+                <div class="auth-row" id="authRow">
+                    <label class="auth-remember">
+                        <input type="checkbox" id="authRemember">
+                        Remember me
+                    </label>
+                    <a href="#" class="auth-forgot" id="authForgot">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-submit" id="authSubmit">SIGN IN</button>
+            </form>
+
+            <div class="auth-divider"><span>or continue with</span></div>
+
+            <div class="auth-social">
+                <button type="button" class="social-btn" data-provider="Google">
+                    <svg width="14" height="14" viewBox="0 0 48 48" aria-hidden="true">
+                        <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/>
+                        <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/>
+                        <path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6l7.9-6.1z"/>
+                        <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/>
+                    </svg>
+                    Google
+                </button>
+                <button type="button" class="social-btn" data-provider="Apple">
+                    <svg width="14" height="14" viewBox="0 0 384 512" aria-hidden="true">
+                        <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zM262.1 104.5c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                    </svg>
+                    Apple
+                </button>
+            </div>
+
+            <p class="auth-switch" id="authSwitchText">
+                Don't have an account? <a href="#" id="authSwitch">Create one</a>
+            </p>
+        </div>
+
+        <!-- Preguntas frecuentes -->
+        <div class="auth-faq">
+
+            <div class="faq-item open">
+                <button type="button" class="faq-question" aria-expanded="true">
+                    How do I create an account?
+                    <span class="faq-icon">×</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Click "Create one" on the left, fill in your name, email and password, then hit "Create account". You're ready to join the community.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Is my data secure?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Your password is encrypted and we never share your personal information with third parties.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    Can I sign in with Google or Apple?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Use the Google or Apple buttons under the form to continue with your existing account in one tap.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false">
+                    What if I forget my password?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Type your email and click "Forgot password?". We'll send you a link to set a new one.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MODAL DE RESERVA -->
+<div class="pm-overlay" id="pmOverlay">
+    <div class="pm-box" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+        <button class="pm-close" id="pmClose" aria-label="Cerrar">✕</button>
+
+        <img class="pm-image" id="pmImage" src="" alt="">
+
+        <div class="pm-body">
+            <h3 id="pmTitle"></h3>
+            <p class="pm-sub"><span id="pmLocation"></span> · <span id="pmRating"></span></p>
+
+            <div class="pm-price-box">
+                <div>
+                    <small>PRICE PER HOUR</small>
+                    <strong id="pmPrice"></strong>
+                </div>
+                <div class="pm-sport">
+                    <small>SPORT</small>
+                    <strong id="pmSport"></strong>
+                </div>
+            </div>
+
+            <p class="pm-label">AVAILABILITY</p>
+            <div class="pm-days" id="pmDays"></div>
+            <div class="pm-slots" id="pmSlots"></div>
+
+            <button class="pm-confirm" id="pmConfirm" disabled>Select a time slot</button>
+            <p class="pm-note">Free cancellation up to 2 hours before</p>
+        </div>
+    </div>
+</div>
 
 <!-- BOTÓN FLOTANTE DEL MAPA -->
 <a href="#interactive-map" class="floating-map-button">
     View Interactive Map
 </a>
 
-<!-- FUNCIONAMIENTO DE LOS BOTONES DE RESERVA -->
+<!-- FUNCIONAMIENTO DE LOS BOTONES DE RESERVA Y DEL MODAL -->
 <script>
     const bookButtons = document.querySelectorAll(".book-button");
     const bookingMessage = document.getElementById("bookingMessage");
 
-    bookButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const court = button.dataset.court;
+    const overlay = document.getElementById("pmOverlay");
+    const pmImage = document.getElementById("pmImage");
+    const pmTitle = document.getElementById("pmTitle");
+    const pmLocation = document.getElementById("pmLocation");
+    const pmRating = document.getElementById("pmRating");
+    const pmPrice = document.getElementById("pmPrice");
+    const pmSport = document.getElementById("pmSport");
+    const pmDays = document.getElementById("pmDays");
+    const pmSlots = document.getElementById("pmSlots");
+    const pmConfirm = document.getElementById("pmConfirm");
 
-            bookingMessage.textContent =
-                "You selected: " + court + ". Booking feature coming soon!";
+    const times = ["9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM"];
+    let selectedDay = "Today";
+    let selectedSlot = null;
+    let currentCourt = "";
+
+    // Nombres de los 3 días: Today, Tomorrow y el día siguiente con fecha
+    function getDays() {
+        const d = new Date();
+        d.setDate(d.getDate() + 2);
+        const third = d.toLocaleDateString("en-US", { weekday: "short", day: "numeric" });
+        return ["Today", "Tomorrow", third];
+    }
+
+    // Horarios ocupados (cambian según el día)
+    function isBusy(dayIndex, slotIndex) {
+        return (slotIndex + dayIndex * 2) % 4 === 1;
+    }
+
+    function renderDays() {
+        pmDays.innerHTML = "";
+        getDays().forEach((day) => {
+            const btn = document.createElement("button");
+            btn.className = "pm-day" + (day === selectedDay ? " active" : "");
+            btn.textContent = day;
+            btn.addEventListener("click", () => {
+                selectedDay = day;
+                selectedSlot = null;
+                renderDays();
+                renderSlots();
+            });
+            pmDays.appendChild(btn);
         });
+    }
+
+    function renderSlots() {
+        const dayIndex = getDays().indexOf(selectedDay);
+        pmSlots.innerHTML = "";
+        times.forEach((time, i) => {
+            const btn = document.createElement("button");
+            btn.className = "pm-slot" + (time === selectedSlot ? " selected" : "");
+            btn.textContent = time;
+            btn.disabled = isBusy(dayIndex, i);
+            btn.addEventListener("click", () => {
+                selectedSlot = time;
+                renderSlots();
+            });
+            pmSlots.appendChild(btn);
+        });
+
+        if (selectedSlot) {
+            pmConfirm.disabled = false;
+            pmConfirm.textContent = "Confirm " + selectedDay + " · " + selectedSlot + " · " + pmPrice.textContent;
+        } else {
+            pmConfirm.disabled = true;
+            pmConfirm.textContent = "Select a time slot";
+        }
+    }
+
+    function openModal(button) {
+        const card = button.closest(".court-card");
+        currentCourt = button.dataset.court;
+
+        pmImage.src = card.querySelector(".court-image img").src;
+        pmImage.alt = currentCourt;
+        pmTitle.textContent = currentCourt;
+        pmLocation.textContent = card.querySelector(".court-location").textContent;
+        pmRating.textContent = card.querySelector(".court-rating").textContent;
+        pmPrice.textContent = card.querySelector(".court-price strong").textContent;
+        pmSport.textContent = button.dataset.sport;
+
+        selectedDay = "Today";
+        selectedSlot = null;
+        renderDays();
+        renderSlots();
+
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    bookButtons.forEach(button => {
+        button.addEventListener("click", () => openModal(button));
+    });
+
+    document.getElementById("pmClose").addEventListener("click", closeModal);
+
+    // Cerrar al hacer clic fuera de la tarjeta
+    overlay.addEventListener("click", e => {
+        if (e.target === overlay) closeModal();
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeModal();
+    });
+
+    // Reserva pendiente: se guarda hasta que el usuario inicie sesión
+    let pendingBooking = null;
+
+    pmConfirm.addEventListener("click", () => {
+        pendingBooking = {
+            court: currentCourt,
+            day: selectedDay,
+            slot: selectedSlot,
+            price: pmPrice.textContent
+        };
+        bookingMessage.textContent = "";
+        closeModal();
+
+        setMode("signin");
+        setNotice("Please sign in or create an account to finalize your booking.");
+        document.getElementById("signin").scrollIntoView({ behavior: "smooth" });
     });
 </script>
 
+<!-- FUNCIONAMIENTO DEL SIGN IN / CREATE ACCOUNT -->
+<script>
+    const authTitle = document.getElementById("authTitle");
+    const authNotice = document.getElementById("authNotice");
+    const authNoticeText = document.getElementById("authNoticeText");
+    const authForm = document.getElementById("authForm");
+    const nameField = document.getElementById("nameField");
+    const authName = document.getElementById("authName");
+    const authEmail = document.getElementById("authEmail");
+    const authPassword = document.getElementById("authPassword");
+    const authError = document.getElementById("authError");
+    const authRow = document.getElementById("authRow");
+    const authSubmit = document.getElementById("authSubmit");
+    const authSwitchText = document.getElementById("authSwitchText");
+
+    let mode = "signin"; // "signin" o "signup"
+
+    function setNotice(text) {
+        authNoticeText.textContent = text;
+        authNotice.hidden = false;
+    }
+
+    function clearNotice() {
+        authNotice.hidden = true;
+        authNoticeText.textContent = "";
+    }
+
+    function showError(text) {
+        authError.textContent = text;
+    }
+
+    function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    // Cambia entre Sign In y Create account
+    function setMode(newMode) {
+        mode = newMode;
+        showError("");
+
+        if (mode === "signup") {
+            authTitle.textContent = "CREATE ACCOUNT";
+            nameField.hidden = false;
+            authRow.style.display = "none";
+            authSubmit.textContent = "CREATE ACCOUNT";
+            authPassword.autocomplete = "new-password";
+            authSwitchText.innerHTML = 'Already have an account? <a href="#" id="authSwitch">Sign in</a>';
+        } else {
+            authTitle.textContent = "SIGN IN";
+            nameField.hidden = true;
+            authRow.style.display = "";
+            authSubmit.textContent = "SIGN IN";
+            authPassword.autocomplete = "current-password";
+            authSwitchText.innerHTML = 'Don\'t have an account? <a href="#" id="authSwitch">Create one</a>';
+        }
+    }
+
+    // Link "Create one" / "Sign in"
+    authSwitchText.addEventListener("click", e => {
+        if (e.target.id === "authSwitch") {
+            e.preventDefault();
+            setMode(mode === "signin" ? "signup" : "signin");
+        }
+    });
+
+    // Mostrar / ocultar contraseña
+    document.getElementById("authEye").addEventListener("click", () => {
+        const hidden = authPassword.type === "password";
+        authPassword.type = hidden ? "text" : "password";
+    });
+
+    // Enviar formulario
+    authForm.addEventListener("submit", e => {
+        e.preventDefault();
+        showError("");
+
+        const email = authEmail.value.trim();
+        const password = authPassword.value;
+
+        if (mode === "signup" && authName.value.trim() === "") {
+            showError("Please enter your name.");
+            return;
+        }
+        if (!isValidEmail(email)) {
+            showError("Please enter a valid email address.");
+            return;
+        }
+        if (password.length < 8) {
+            showError("Your password must have at least 8 characters.");
+            return;
+        }
+
+        // Aquí iría la conexión real con tu servidor
+        let message = mode === "signup"
+            ? "Account created! Welcome to PRIME."
+            : "Welcome back!";
+
+        if (pendingBooking) {
+            message += " Your booking is confirmed: " + pendingBooking.court +
+                " · " + pendingBooking.day + " at " + pendingBooking.slot +
+                " (" + pendingBooking.price + ").";
+            pendingBooking = null;
+        }
+
+        setNotice(message);
+        authForm.reset();
+        authPassword.type = "password";
+    });
+
+    // Forgot password
+    document.getElementById("authForgot").addEventListener("click", e => {
+        e.preventDefault();
+        const email = authEmail.value.trim();
+        if (!isValidEmail(email)) {
+            showError("Type your email first so we can send you the reset link.");
+            return;
+        }
+        showError("");
+        setNotice("We sent a password reset link to " + email + ".");
+    });
+
+    // Botones Google y Apple
+    document.querySelectorAll(".social-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            showError("");
+            setNotice("Sign in with " + btn.dataset.provider + " is coming soon!");
+        });
+    });
+
+    // Preguntas frecuentes (acordeón)
+    document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", () => {
+            const item = question.parentElement;
+            const willOpen = !item.classList.contains("open");
+
+            document.querySelectorAll(".faq-item").forEach(other => {
+                other.classList.remove("open");
+                other.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+                other.querySelector(".faq-icon").textContent = "+";
+            });
+
+            if (willOpen) {
+                item.classList.add("open");
+                question.setAttribute("aria-expanded", "true");
+                question.querySelector(".faq-icon").textContent = "×";
+            }
+        });
+    });
+</script>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+            <!-- Marca -->
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">PRIME<span>.</span></a>
+                <p>Connect, train, and play. The platform that unites the sports community.</p>
+
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="TikTok">TT</a>
+                </div>
+            </div>
+
+            <!-- Navegación -->
+            <div class="footer-col">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#courts">Courts</a></li>
+                    <li><a href="#">Coaches</a></li>
+                </ul>
+            </div>
+
+            <!-- Comunidad -->
+            <div class="footer-col">
+                <h4>COMMUNITY</h4>
+                <ul>
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal -->
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Terms and conditions</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Prime. All rights reserved.</p>
+        </div>
+
+    </div>
+</footer>
+<!-- MOSTRAR EL BOTÓN DEL MAPA SOLO ENTRE COURTS Y SIGN IN -->
+<script>
+    const mapButton = document.getElementById("floatingMapButton");
+    const visibleZones = new Set();
+
+    const zoneObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                visibleZones.add(entry.target.id);
+            } else {
+                visibleZones.delete(entry.target.id);
+            }
+        });
+        mapButton.classList.toggle("show", visibleZones.size > 0);
+    });
+
+    zoneObserver.observe(document.getElementById("courts"));
+    zoneObserver.observe(document.getElementById("signin"));
+</script>
 <!-- BOOTSTRAP -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
